@@ -3,6 +3,8 @@ package milkucha.trmt;
 import milkucha.trmt.block.ErodedDirtBlock;
 import milkucha.trmt.block.ErodedGrassBlock;
 import milkucha.trmt.block.ErodedSandBlock;
+import milkucha.trmt.block.ErodedGrassPathBlock;
+import milkucha.trmt.block.ErodedSandPathBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +43,20 @@ public final class TRMTBlocks {
             Identifier.fromNamespaceAndPath("trmt", "eroded_sand"),
             new ErodedSandBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).mapColor(MapColor.TERRACOTTA_YELLOW).noOcclusion().randomTicks()
                     .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("trmt", "eroded_sand"))))
+    );
+
+    public static final Block ERODED_GRASS_PATH = Registry.register(
+        BuiltInRegistries.BLOCK,
+        Identifier.fromNamespaceAndPath("trmt", "eroded_grass_path"),
+        new ErodedGrassPathBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT_PATH).mapColor(MapColor.DIRT)
+            .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("trmt", "eroded_grass_path"))))
+    );
+
+    public static final Block ERODED_SAND_PATH = Registry.register(
+        BuiltInRegistries.BLOCK,
+        Identifier.fromNamespaceAndPath("trmt", "eroded_sand_path"),
+        new ErodedSandPathBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).mapColor(MapColor.TERRACOTTA_YELLOW).noOcclusion()
+            .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("trmt", "eroded_sand_path"))))
     );
 
     private TRMTBlocks() {}
